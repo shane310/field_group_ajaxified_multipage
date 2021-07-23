@@ -1,5 +1,5 @@
 {
-    "name": "drupal/field_group_ajaxified_multipage",
+    "name": "shane310/field_group_ajaxified_multipage",
     "type": "drupal-module",
     "description": "Allow make fieldgroups to build multipage content creation forms.",
     "homepage": "http://drupal.org/project/field_group_ajaxified_multipage",

@@ -55,10 +55,10 @@ trait FieldGroupAjaxifiedTrait {
     ];
     $display->setComponent($field_name, $display_options);
 
-    entity_get_form_display('node', $node_type, 'default')
-      ->setComponent($field_name, [
-        'type' => 'test_field_widget',
-      ])
+    \Drupal::service('entity_display.repository')->getFormDisplay('node', $node_type, 'default')
+       ->setComponent($field_name, [
+         'type' => 'test_field_widget',
+       ])
       ->save();
   }
 

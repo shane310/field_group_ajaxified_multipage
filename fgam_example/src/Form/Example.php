@@ -143,8 +143,7 @@ class Example extends FormBase {
     // It validates that the multipage is enabled.
     if (!is_null($form_state->get('field_group_ajaxified_multipage_enabled')) && !is_null($form_state->get('all')['values'])) {
       $values = $form_state->get('all')['values'];
-      drupal_set_message(
-        $this->t(
+      $this->messenger()->addStatus($this->t(
           'The form has been submitted. name="@first @last", address="@address", description="@description"', [
             '@first' => $values['first'],
             '@last' => $values['last'],
@@ -156,8 +155,7 @@ class Example extends FormBase {
     }
     elseif (!is_null($form_state->getValues())) {
       $values = $form_state->getValues();
-      drupal_set_message(
-        $this->t(
+      $this->messenger()->addStatus($this->t(
           'The form is not multipage but here are the values. name="@first @last", address=@address, description=@description', [
             '@first' => $values['first'],
             '@last' => $values['last'],
@@ -168,7 +166,7 @@ class Example extends FormBase {
       );
     }
     else {
-      drupal_set_message($this->t('There are no values or the form failed'));
+      $this->messenger()->addStatus($this->t('There are no values or the form failed'));
     }
     return '';
   }
